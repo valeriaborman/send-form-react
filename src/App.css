@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: black
 }
 
 .App-logo {
@@ -11,6 +12,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+html{
+  background: black;
+  color: white;
 }
 
 .App-header {
@@ -35,4 +40,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.goods-block {
+  display: flex;
+  justify-content: space-between;
+}
+div#root {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
+  padding: 20px;
+}
+.total-amount{
+  margin-top: 30px;
+}
+img{
+  width: 100px;
+  position: relative;
+  left: 40%;
+}
+button, input{
+  cursor: pointer;
 }

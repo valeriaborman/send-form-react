@@ -1,0 +1,23 @@
+[
+    {
+        "articul": "902d",
+        "title": "Premium Plan",
+        "cost": 98
+    },
+    {
+        "articul": "123d",
+        "title": "Standard Plan",
+        "cost": 60
+    },
+    {
+        "articul": "143d",
+        "title": "Basic service",
+        "cost": 30
+    },
+    {
+        "articul": "545s",
+        "title": "Consultation to the Shopify platform",
+        "cost": 30
+    }
+]
+
