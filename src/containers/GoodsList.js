@@ -2,32 +2,34 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGoods } from "../store/goodsSlice";
 import Goods from "../components/Goods";
-import { increment } from "../store/CartSlice";
+import { addToCart, removeFromCart } from "../store/CartSlice";
 
-function GoodsList(){
-const goods = useSelector(selectGoods);
-const dispatch = useDispatch(); 
+function GoodsList() {
+    const goods = useSelector(selectGoods);
+    const cart = useSelector(state => state.cart);
+    const dispatch = useDispatch();
 
- const clickHandler = (event) =>{
-    // event.preventDefault(); 
-    let t = event.target;
-    if(!t.classList.contains('add-to-cart')) return true;
-    dispatch(increment(t.getAttribute('data-key')));
- }
+    const handleToggleCartItem = (articul, isChecked) => {
+        if (isChecked) {
+            dispatch(addToCart(articul));
+        } else {
+            dispatch(removeFromCart(articul));
+        }
+    };
 
-
-return(
-    <>
-    <div className="goods-field" onClick={clickHandler}>
-    {goods.map(item => <Goods title={item.title} cost={item.cost} image={item.image}
-                    articul={item.articul} key={item.articul} />)}
-    </div>
-    
-    
-    </>
-)
-
-
-
+    return (
+        <div className="goods-field">
+            {goods.map(item => (
+                <Goods
+                    key={item.articul}
+                    title={item.title}
+                    articul={item.articul}
+                    inCart={!!cart[item.articul]}
+                    onToggleCartItem={handleToggleCartItem}
+                />
+            ))}
+        </div>
+    );
 }
+
 export default GoodsList;

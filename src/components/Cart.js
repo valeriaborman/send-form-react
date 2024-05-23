@@ -20,7 +20,7 @@ const Cart = (props) => {
                         <tr>
                             <td><b>Name of the service:</b>  {goods[item]['title']}</td>
                             <td><b>Price:</b>  {goods[item]['cost'] + "$"}</td>
-                            <td><button className="delete" data-key={goods[item]['articul']}>Delete</button></td>
+                            {/* <td><button className="delete" data-key={goods[item]['articul']}>Delete</button></td> */}
                             
                         </tr>
                         
